@@ -1,0 +1,27 @@
+<div class="chat">
+  <div class="header">Chatbot</div>
+  <form #questions="ngForm">
+    <div class="conversation" #conversation style="overflow-y: scroll">
+      <div class="bot-message">
+        {{"Hi there"}}
+      </div>
+      <div *ngFor="let question of listOfQuestions; let k = index; let l = last" class="section">
+        <div class="msg">
+          <div *ngIf="question" class="user-message">{{question}}</div>
+        </div>
+
+        <div class="bot-message">
+          <div *ngIf='listOfResults[k]' class="showText">
+            <div *ngIf='listOfResults[k]' class="msg">
+              {{listOfResults[k]}}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="response">
+      <input autocomplete="off" [(ngModel)]="newQuestion" name="newQuestion" placeholder="Question" autofocus>
+      <button class="ask" type="submit" (click)="askQuestion(questions.value)">Ask me</button>
+    </div>
+  </form>
+</div>
