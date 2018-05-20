@@ -1,11 +1,102 @@
-.chat {
-    float: left;
-    margin: 20px;
-    border: 1px solid black;
-    width: 600px;
+.chat-window {
+    width: 380px;
+    position: absolute;
+    right: 20%;
+    bottom: 0px;
+  }
+
+  input[type=checkbox]{display:none}
+  .top {
+    background: tomato;
+    padding: 10px;
+    width: 360px;
+    height: 20px;
+    display: block;
+    cursor: pointer;
+    border-bottom: 1px solid #fff;
+  }
+  
+  #trigger:checked ~ .chat,
+  #trigger:checked ~ textarea {
+    display: none}
+  #trigger:checked ~ .top {
+    bottom: 0;
+    position: absolute;
+  }
+  #close:checked ~ .chat-window {
+    display: none}
+  
+  .online {
+    background: lightgreen;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    margin-right: 10px;
+    display: inline-block;
+  }
+  
+  .close {
+    font-size: 1.3em;
+    float: right;
+    padding: 0 7px;
+    transition: .3s;
+    cursor: pointer;
+  }
+  .close:hover {
+    background: rgba(255,0,0,.2);
+    box-shadow: 0 0 10px 1px rgba(0,0,0,.2) inset;
+  }
+
+  .chat {
+    background: white;
     height: 100%;
-    padding-bottom: 40px;
-}
+    width: 100%
+  }
+
+  .damn {
+    margin: 10px 0;
+    clear: both;
+  }
+  img {
+    float: left;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    position: relative;
+    margin-right: -15px;
+    z-index: 1;
+    border: 1px solid;
+  }
+
+  .name, .message {
+    background: steelblue;
+    float: left;
+    padding: 8px 20px;
+    max-width: 220px;
+    border-radius: 10px;
+  }
+  .name {font-weight: 700;}
+  .message {width: 220px;
+            background: silver;}
+
+  .me img {
+    background: greenyellow;
+    float: right;
+    margin-right: 0;
+    margin-left: -15px;
+  }
+  
+  .me .name, .me .message {
+    float: right;
+    text-align: right;}
+  
+    .me .message {
+      background: #aaff80;
+    }
+
+
+  .clear{clear:both}
+
 .chat form {
     padding:20px; 
 }
@@ -13,36 +104,20 @@
     float: left;
     width: 100%;
     height: 300px;
+    overflow: auto;
 }
 
 .response {
     float: left;
     width: 100%;
 }
-.bot-message {
-    float: left;
-    padding: 20px;
-    width: 100px;
-    text-align: center;
-    background-color: lightblue;
-    border: 1px solid lightblue;
-    border-radius: 10%;
-}
-.user-message {
-    float: right;
-    padding: 20px;
-    width: 100px;
-    background-color: darkseagreen;
-    border: 1px solid darkseagreen;
-    border-radius: 10%;
-}
+
 .showText {
     width: 100%;
     float: left;
 }
 .msg {
     width: 100%;
-    float: left;
 }
 
 .header{
@@ -52,6 +127,35 @@
     text-align: center;
 }
 input {
-    width: 280px;
+  width: 280px;
+  height: 35px;
+  border: 0;
+  padding: 10px 20px;
+  box-shadow: 0 -1px 20px -3px #000;
+  box-sizing: border-box;
+}
+.ask {
+  font-size: 10px;
+  width: 50px;
+  height: 35px;
+  border: 0;
+  box-shadow: 0 -1px 20px -3px #000;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+ 
+::-webkit-scrollbar-track {
+  border-radius: 0;
+}
+ 
+::-webkit-scrollbar-thumb {
+  margin: 2px;
+  border-radius: 5px;
+}
+
+.chat-window:hover ::-webkit-scrollbar-thumb {
+  background: rgba(0,0,0,0.2);
 }
 

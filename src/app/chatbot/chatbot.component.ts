@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DialogflowService } from '../dialogflow.service';
+import * as $ from 'jquery';
 
 @Component({
   selector: 'app-chatbot',
@@ -20,8 +21,14 @@ export class ChatbotComponent implements OnInit {
 
   ngOnInit() {
     this.welcomeText = "Hi there"
+    $("#submit").click(function(){
+      $(".conversation").stop().animate({ scrollTop: $(".conversation")[0].scrollHeight}, 1000);
+    });
   }
 
+
+
+  
   askQuestion(value: any) {
     value.newQuestion = value.newQuestion.trim();
     if (value.newQuestion) {
