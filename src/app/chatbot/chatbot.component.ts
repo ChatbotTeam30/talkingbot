@@ -22,7 +22,7 @@ export class ChatbotComponent implements OnInit {
   ngOnInit() {
     this.welcomeText = "Hi there"
     $("#submit").click(function(){
-      $(".conversation").stop().animate({ scrollTop: $(".conversation")[0].scrollHeight}, 1000);
+      $(".conversation").stop().animate({ scrollTop: $(".conversation")[0].scrollHeight}, 2000);
     });
   }
 
